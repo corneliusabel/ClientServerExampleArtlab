@@ -12,7 +12,7 @@ The dashboard web page uses htmx (https://htmx.org/) for dynamic display/refresh
 
 ```bash
 python -m venv venv
-.venv\Scripts\activate
+venv\Scripts\activate
 ```
 
 ### Install requirements
