@@ -1,0 +1,15 @@
+{% if clients %}
+    {% for clientID, client in clients.items() %}
+        <div class="client card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Client ID:{{ client.ID }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Status: <b>{{ client.status }}</b>, Cmd: <b>{{ client.cmd }}</b></h6>
+            <p class="card-text {% if client.last_request> 5 %}text-danger{% endif %}">Last Client Request: {{ client.last_request }} (s)
+                {% if client.status == "running" %}
+                    <button class="btn btn-danger" hx-get="{{ url_for('shutdown_client', clientID=client.ID) }}" hx-swap="innerHTML">Shutdown</button>
+                {% endif %}
+            </p>
+          </div>
+        </div>
+    {% endfor %}
+{% endif %}
