@@ -35,3 +35,9 @@ python client.py
 #with specific id
 python client.py --id 1
 ```
+
+### Open dashboard
+Open http://localhost:5000/ in your browser
+
+should look like this:
+![Dashboard](dashboard.png)
